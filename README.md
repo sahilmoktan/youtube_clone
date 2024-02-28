@@ -7,6 +7,9 @@ app.tsx ma remove imp of css and structure ma div of Youtube
 
 now add tailwind css by following link commands {https://tailwindcss.com/docs/guides/vite}
 
+first starting with page header
+npm i lucide-react for logo
+npm i class-variance-authority tailwind-merge for button lai style ani merge for no conflict while styling
 
 
 # React + TypeScript + Vite
