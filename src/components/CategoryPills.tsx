@@ -1,17 +1,64 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./Button";
+import { useEffect, useRef, useState } from "react";
 
-export function CategoryPills(){
+type CategoryPillProps = {
+    categories: string[]
+    selectedCategory: string
+    onSelect: (category: string) => void
+}
+
+const TRANSLATE_AMOUNT = 200
+
+export function CategoryPills({ categories, selectedCategory, onSelect }: CategoryPillProps) {
+    const [translate, setTranslate] = useState(0)
+    const [isLeftVisible, setIsLeftVisible] = useState(false);
+    const [isRightVisible, setIsRightVisible] = useState(false);
+    const containerRef = useRef<HTMLDivElement>(null)
+
+
+    useEffect(() => {
+        if (containerRef.current == null) return
+
+        const observer = new ResizeObserver(entries => {
+            const container = entries[0]?.target
+
+            if (container == null) return
+
+            setIsLeftVisible(translate > 0)
+            setIsRightVisible(
+                translate + container.clientWidth < container.scrollWidth
+            )
+        })
+
+        observer.observe(containerRef.current)
+
+        return () => {
+            observer.disconnect()
+        }
+
+
+    }, [categories, translate])
+
     return (
-        <div className="overflow-x-hidden relative">
-            <div className="flex whitespace-nowarp gap-3 transition-transform w-[max-content] ">
-                <Button
-                 className="py-1 px-3 rounded-lg whitespace-nowarp">
-                All
-                </Button>
-                <Button className="py-1 px-3 rounded-lg whitespace-nowarp">
-                JavaScript
-                </Button>
+        <div ref={containerRef} className="overflow-x-hidden relative">
+            <div className="flex whitespace-nowrap gap-3 transition-transform w-[max-content]" style={{ transform: `translateX(-${translate}px)` }}>
+                {categories.map(category => (
+                    <Button
+                        key={category}
+                        onClick={() => onSelect(category)}
+                        variant={selectedCategory === category ? "dark" : "default"}
+                        className="py-1 px-3 rounded-lg whitespace-nowrap">
+                        {category}
+                    </Button>
+                ))}
+
+
             </div>
+
+            
+
+
         </div>
     )
 }
