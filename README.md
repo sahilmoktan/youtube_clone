@@ -11,6 +11,13 @@ first starting with page header
 npm i lucide-react for logo
 npm i class-variance-authority tailwind-merge for button lai style ani merge for no conflict while styling
 
+## for catagory : catagoryPill component created, view look like below
+![top bar](https://github.com/sahilmoktan/youtube_clone/assets/103031235/010f8250-456f-40bb-a2ff-41b7836c742e)
+
+
+## for video thumbnail showing part: VideoGridItem component created, view as below
+![vid part](https://github.com/sahilmoktan/youtube_clone/assets/103031235/28022b5c-880c-402f-a2f9-96bbca9a3186)
+
 
 # React + TypeScript + Vite
 
