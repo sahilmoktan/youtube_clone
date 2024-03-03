@@ -19,6 +19,9 @@ npm i class-variance-authority tailwind-merge for button lai style ani merge for
 ![vid part](https://github.com/sahilmoktan/youtube_clone/assets/103031235/28022b5c-880c-402f-a2f9-96bbca9a3186)
 
 
+creating utils folder and it's file for formal formatting date colons
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
