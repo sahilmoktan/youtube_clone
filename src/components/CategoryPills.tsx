@@ -48,7 +48,7 @@ export function CategoryPills({ categories, selectedCategory, onSelect }: Catego
                         key={category}
                         onClick={() => onSelect(category)}
                         variant={selectedCategory === category ? "dark" : "default"}
-                        className="py-1 px-3 rounded-lg whitespace-nowrap">
+                        className="py-1 px-3 rounded-lg whitespace-nowrap bg-gray-200">
                         {category}
                     </Button>
                 ))}
