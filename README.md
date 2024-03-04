@@ -24,6 +24,8 @@ creating utils folder and it's file for formal formatting date colons
 ## able to show channel icon, title views, and uploaded ago
 ![ttub](https://github.com/sahilmoktan/youtube_clone/assets/103031235/fe625e9c-281e-413a-bc5d-cc70ce65ff2b)
 
+after that, able to play video while hoveing on it by using, usestate, useeffect, useref etc
+
 
 # React + TypeScript + Vite
 
