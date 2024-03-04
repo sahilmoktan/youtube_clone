@@ -26,6 +26,13 @@ creating utils folder and it's file for formal formatting date colons
 
 after that, able to play video while hoveing on it by using, usestate, useeffect, useref etc
 
+created sidebar.tsx for side bar work,
+SmallSidebarItem // for medium & small screen
+LargeSidebarItem // for wide & big screen
+
+
+
+
 
 # React + TypeScript + Vite
 
