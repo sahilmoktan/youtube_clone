@@ -30,10 +30,15 @@ created sidebar.tsx for side bar work,
 SmallSidebarItem // for medium & small screen
 LargeSidebarItem // for wide & big screen
 
+## show more or show less feature added on side bar
+![show more button](https://github.com/sahilmoktan/youtube_clone/assets/103031235/93a41595-68f8-4e19-aac2-151fae3f9f33)
 
 
 
 
+
+
+##...
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
