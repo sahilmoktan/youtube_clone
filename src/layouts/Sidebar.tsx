@@ -1,7 +1,8 @@
-import { ChevronDown, ChevronUp, Clapperboard, Home, Library, Repeat } from "lucide-react";
+import { ChevronDown, ChevronUp, Clapperboard, Clock, History, Home, Library, ListVideo, PlaySquare, Repeat } from "lucide-react";
 import { Children, ElementType, ReactNode, useState } from "react";
 import { Button, buttonStyles } from "../components/Button";
 import { twMerge } from "tailwind-merge";
+import { playlists } from "../data/Sidebar";
 
 export function Sidebar() {
   return (
@@ -21,8 +22,48 @@ export function Sidebar() {
         <LargeSidebarSection visibleItemCount={1}>
           <LargeSidebarItem isActive Icon={Home} title="Home" url="/" />
           <LargeSidebarItem Icon={Home} title="Home" url="/" />
-        
+          <LargeSidebarItem
+                        Icon={Clapperboard}
+                        title="Subscriptions"
+                        url="/subscriptions"
+                    />
         </LargeSidebarSection>
+        <hr />
+
+                <LargeSidebarSection visibleItemCount={5}>
+                    <LargeSidebarItem
+                        Icon={Library}
+                        title="Library"
+                        url="/library"
+                    />
+                    <LargeSidebarItem
+                        Icon={History}
+                        title="History"
+                        url="/history"
+                    />
+                    <LargeSidebarItem
+                        Icon={PlaySquare}
+                        title="Your Videos"
+                        url="/your-videos"
+                    />
+                    <LargeSidebarItem
+                        Icon={Clock}
+                        title="Watch Later"
+                        url="/playlist?list=WL"
+                    />
+                    {playlists.map(playlist => (
+                        <LargeSidebarItem
+                            key={playlist.id}
+                            Icon={ListVideo}
+                            title={playlist.name}
+                            url={`/playlist?list=${playlist.id}`}
+                        />
+
+                        ))}
+
+                </LargeSidebarSection>
+
+        
       </aside>
     </>
   );
