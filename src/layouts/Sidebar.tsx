@@ -20,10 +20,10 @@ export function Sidebar() {
 
       <aside className="w-56 lg:sticky absolute top-0 overflow-y-auto scrollbar-hidden pb-4 flex-col gap-2 px-2 flex">
         <LargeSidebarSection visibleItemCount={1}>
-          <LargeSidebarItem isActive Icon={Home} title="Home" url="/" />
-          <LargeSidebarItem Icon={Home} title="Home" url="/" />
+          <LargeSidebarItem isActive IconorImgUrl={Home} title="Home" url="/" />
+          <LargeSidebarItem IconorImgUrl={Home} title="Home" url="/" />
           <LargeSidebarItem
-                        Icon={Clapperboard}
+                        IconorImgUrl={Clapperboard}
                         title="Subscriptions"
                         url="/subscriptions"
                     />
@@ -32,35 +32,44 @@ export function Sidebar() {
 
                 <LargeSidebarSection visibleItemCount={5}>
                     <LargeSidebarItem
-                        Icon={Library}
+                        IconorImgUrl={Library}
                         title="Library"
                         url="/library"
                     />
                     <LargeSidebarItem
-                        Icon={History}
+                        IconorImgUrl={History}
                         title="History"
                         url="/history"
                     />
                     <LargeSidebarItem
-                        Icon={PlaySquare}
+                        IconorImgUrl={PlaySquare}
                         title="Your Videos"
                         url="/your-videos"
                     />
                     <LargeSidebarItem
-                        Icon={Clock}
+                        IconorImgUrl={Clock}
                         title="Watch Later"
                         url="/playlist?list=WL"
                     />
                     {playlists.map(playlist => (
                         <LargeSidebarItem
                             key={playlist.id}
-                            Icon={ListVideo}
+                            IconorImgUrl={ListVideo}
                             title={playlist.name}
                             url={`/playlist?list=${playlist.id}`}
                         />
 
                         ))}
 
+                </LargeSidebarSection>
+                <hr/>
+                <LargeSidebarSection title="subscriptions">
+                      <LargeSidebarItem
+                      IconorImgUrl={Clock}
+                      title="Watch Later"
+                      url="/playlist?list=wl" />
+
+                      
                 </LargeSidebarSection>
 
         
@@ -123,14 +132,14 @@ function LargeSidebarSection({ children, title, visibleItemCount = Number.POSITI
 }
 
 type LargeSidebarItemProps = {
-  Icon: ElementType;
+  IconorImgUrl: ElementType | String;
   title: string;
   url: string;
   isActive?: boolean;
 };
 
 function LargeSidebarItem({
-  Icon,
+  IconorImgUrl,
   title,
   url,
   isActive = false,
@@ -143,7 +152,7 @@ function LargeSidebarItem({
         `w-full flex items-center rounded-lg gap-4 p-3 ${isActive ? "font-bold bg-neutral-100 hover:bg-secondary" : undefined}`
       )}
     >
-      <Icon className="w-6 h-6" />
+      <IconorImgUrl className="w-6 h-6" />
 
       <div className="whitespace-nowrap overflow-hidden text-ellipsis">
         {title}
