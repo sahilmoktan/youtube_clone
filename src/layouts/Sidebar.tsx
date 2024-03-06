@@ -2,7 +2,7 @@ import { ChevronDown, ChevronUp, Clapperboard, Clock, History, Home, Library, Li
 import { Children, ElementType, ReactNode, useState } from "react";
 import { Button, buttonStyles } from "../components/Button";
 import { twMerge } from "tailwind-merge";
-import { playlists } from "../data/Sidebar";
+import { playlists, subscriptions } from "../data/Sidebar";
 
 export function Sidebar() {
   return (
@@ -64,10 +64,15 @@ export function Sidebar() {
                 </LargeSidebarSection>
                 <hr/>
                 <LargeSidebarSection title="subscriptions">
+                  {subscriptions.map(subscription=>(
+
                       <LargeSidebarItem
-                      IconorImgUrl={Clock}
-                      title="Watch Later"
-                      url="/playlist?list=wl" />
+                      key={subscription.id}
+
+                      IconorImgUrl={subscription.imgUrl}
+                      title={subscription.channelName}
+                      url={`/@${subscription.id}`} />
+                  ))}
 
                       
                 </LargeSidebarSection>
@@ -152,7 +157,13 @@ function LargeSidebarItem({
         `w-full flex items-center rounded-lg gap-4 p-3 ${isActive ? "font-bold bg-neutral-100 hover:bg-secondary" : undefined}`
       )}
     >
-      <IconorImgUrl className="w-6 h-6" />
+      {typeof IconorImgUrl === 'string'?(
+
+        <img src={IconorImgUrl} className="w-6 h-6 rounded-full" />
+      ):(
+        <IconorImgUrl className="w-6 h-6" />
+        
+      )}
 
       <div className="whitespace-nowrap overflow-hidden text-ellipsis">
         {title}
