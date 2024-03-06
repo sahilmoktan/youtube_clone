@@ -1,4 +1,4 @@
-import { ChevronDown, ChevronUp, Clapperboard, Clock, History, Home, Library, ListVideo, PlaySquare, Repeat } from "lucide-react";
+import { ChevronDown, ChevronUp, Clapperboard, Clock, Film, Flame, Gamepad2, History, Home, Library, Lightbulb, ListVideo, Music2, Newspaper, PlaySquare, Podcast, Radio, Repeat, Shirt, ShoppingBag, Trophy } from "lucide-react";
 import { Children, ElementType, ReactNode, useState } from "react";
 import { Button, buttonStyles } from "../components/Button";
 import { twMerge } from "tailwind-merge";
@@ -75,6 +75,53 @@ export function Sidebar() {
                   ))}
 
                       
+                </LargeSidebarSection>
+                <hr/>
+                <LargeSidebarSection title="Explore">
+                <LargeSidebarItem
+                        IconorImgUrl={Flame}
+                        title="Trending"
+                        url="/trending"
+                    />
+                    <LargeSidebarItem
+                        IconorImgUrl={ShoppingBag}
+                        title="Shopping"
+                        url="/shopping"
+                    />
+                    <LargeSidebarItem IconorImgUrl={Music2} title="Music" url="/music" />
+                    <LargeSidebarItem
+                        IconorImgUrl={Film}
+                        title="Movies & TV"
+                        url="/movies-tv"
+                    />
+                    <LargeSidebarItem IconorImgUrl={Radio} title="Live" url="/live" />
+                    <LargeSidebarItem
+                        IconorImgUrl={Gamepad2}
+                        title="Gaming"
+                        url="/gaming"
+                    />
+                    <LargeSidebarItem IconorImgUrl={Newspaper} title="News" url="/news" />
+                    <LargeSidebarItem
+                        IconorImgUrl={Trophy}
+                        title="Sports"
+                        url="/sports"
+                    />
+                    <LargeSidebarItem
+                        IconorImgUrl={Lightbulb}
+                        title="Learning"
+                        url="/learning"
+                    />
+                    <LargeSidebarItem
+                        IconorImgUrl={Shirt}
+                        title="Fashion & Beauty"
+                        url="/fashion-beauty"
+                    />
+                    <LargeSidebarItem
+                        IconorImgUrl={Podcast}
+                        title="Podcasts"
+                        url="/podcasts"
+                    />
+
                 </LargeSidebarSection>
 
         
