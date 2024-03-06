@@ -34,8 +34,10 @@ LargeSidebarItem // for wide & big screen
 ![show more button](https://github.com/sahilmoktan/youtube_clone/assets/103031235/93a41595-68f8-4e19-aac2-151fae3f9f33)
 
 
+## sidebar toggle button fully functioning
+![final](https://github.com/sahilmoktan/youtube_clone/assets/103031235/05aa6565-9407-4259-a783-fb67b8e1afe7)
 
-
+this project ends here
 
 
 ##...
